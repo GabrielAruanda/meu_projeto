@@ -1,0 +1,104 @@
+/* styles.css */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#sidebar {
+    height: 100%;
+    width: 250px;
+    background-color: #007bff;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s;
+    overflow: hidden;
+    position: fixed;
+}
+
+.sidebar-heading {
+    padding: 15px;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.list-group-item {
+    padding: 20px;
+    transition: all 0.3s;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+#sidebar .list-group-item {
+    color: white;
+    border: none;
+}
+
+#sidebar .list-group-item:hover {
+    background-color: #0056b3;
+}
+
+#page-content-wrapper {
+    flex: 1;
+    padding: 20px;
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    transition: all 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sidebar.collapsed {
+    width: 80px;
+}
+
+#sidebar.collapsed .list-group-item span {
+    display: none;
+}
+
+#sidebar.collapsed .sidebar-heading {
+    text-align: center;
+}
+
+#sidebar.collapsed #page-content-wrapper {
+    margin-left: 80px;
+    width: calc(100% - 80px);
+}
+
+.toggle-btn {
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+}
+
+#sidebar.collapsed .toggle-btn {
+    transform: rotate(180deg);
+}
+
+.list-group-item i {
+    min-width: 25px;
+    text-align: center;
+}
+
+.list-group-item:hover {
+    background-color: #0056b3;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
