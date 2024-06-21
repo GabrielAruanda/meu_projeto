@@ -29,17 +29,17 @@
                     <i class="fas fa-envelope me-2"></i>Contact
                 </a>
                 {% if 'logged_in' in session %}
-                    <a href="{{ url_for('logout') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                        <i class="fas fa-sign-out-alt me-2"></i>Logout
-                    </a>
-                {% else %}
-                    <a href="{{ url_for('register') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                        <i class="fas fa-user-plus me-2"></i>Cadastro
-                    </a>
-                    <a href="{{ url_for('login') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                        <i class="fas fa-sign-in-alt me-2"></i>Login
-                    </a>
-                {% endif %}
+                <a href="{{ url_for('logout') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                    <i class="fas fa-sign-out-alt me-2"></i>Logout ({{ session['username'] }})
+                </a>
+            {% else %}
+                <a href="{{ url_for('register') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                    <i class="fas fa-user-plus me-2"></i>Cadastro
+                </a>
+                <a href="{{ url_for('login') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                    <i class="fas fa-sign-in-alt me-2"></i>Login
+                </a>
+            {% endif %}
             </div>
         </div>
     <!-- Conteúdo da Página -->
@@ -61,6 +61,7 @@
                     <textarea class="form-control" id="message" rows="5"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                
             </form>
         </div>
     </div>
