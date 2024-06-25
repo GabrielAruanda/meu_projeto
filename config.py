@@ -1,8 +1,11 @@
 # config.py
 
 class Config:
-    MYSQL_HOST = 'localhost'
-    MYSQL_USER = 'root'
-    MYSQL_PASSWORD = ''
-    MYSQL_DB = 'meu_projeto'
-    SECRET_KEY = 'supersecretkey'  # Substitua por uma chave secreta segura
+    # Configurações para acesso ao MySQL
+    MYSQL_HOST = 'localhost'  # Endereço do servidor MySQL
+    MYSQL_USER = 'root'       # Usuário do MySQL
+    MYSQL_PASSWORD = ''       # Senha do MySQL (substitua pela senha adequada)
+    MYSQL_DB = 'meu_projeto'  # Nome do banco de dados no MySQL
+
+    # Chave secreta para sessões do Flask (substitua por uma chave segura)
+    SECRET_KEY = 'supersecretkey'

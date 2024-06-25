@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Meu Site com Flask</title>
+    <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
@@ -15,6 +18,7 @@
             <div class="sidebar-heading text-white text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
                 <i class="fas fa-user-secret me-2"></i>Meu Site
             </div>
+            <!-- Lista de links do menu -->
             <div class="list-group list-group-flush my-3">
                 <a href="{{ url_for('home') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                     <i class="fas fa-home me-2"></i>Home
@@ -28,6 +32,7 @@
                 <a href="{{ url_for('contact') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                     <i class="fas fa-envelope me-2"></i>Contact
                 </a>
+                <!-- Verificação de sessão para exibir links de login/logout -->
                 {% if 'logged_in' in session %}
                     <a href="{{ url_for('logout') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                         <i class="fas fa-sign-out-alt me-2"></i>Logout ({{ session['username'] }})
@@ -52,9 +57,11 @@
         </div>
     </div>
 
+    <!-- Scripts JavaScript necessários -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- Script personalizado -->
     <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
 </html>

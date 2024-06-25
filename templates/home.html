@@ -1,13 +1,15 @@
-<!-- home.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> <!-- Arquivo de estilos customizado -->
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <style>
         /* Estilos adicionais específicos para o encurtador de URL */
         .url-shortener-container {
@@ -48,6 +50,7 @@
         <div class="sidebar-heading text-white text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
             <i class="fas fa-user-secret me-2"></i>Meu Site
         </div>
+        <!-- Lista de links do menu -->
         <div class="list-group list-group-flush my-3">
             <a href="{{ url_for('home') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                 <i class="fas fa-home me-2"></i>Home
@@ -80,11 +83,13 @@
     <div class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-md-8">
+                <!-- Card do encurtador de URL -->
                 <div class="card url-shortener-card">
                     <div class="card-header bg-primary text-white">
                         <h3 class="card-title">Encurtador de URL</h3>
                     </div>
                     <div class="card-body">
+                        <!-- Formulário de encurtamento de URL -->
                         <form method="POST" action="{{ url_for('home') }}">
                             <div class="form-group">
                                 <label for="original_url">URL Original:</label>
@@ -94,6 +99,7 @@
                         </form>
                     </div>
                 </div>
+                <!-- Lista de URLs encurtadas -->
                 <div class="url-shortener-list">
                     <h2 class="mt-4 mb-3">URLs Encurtadas:</h2>
                     <ul class="list-group">
@@ -114,10 +120,11 @@
         </div>
     </div>
 
-    <!-- Scripts -->
+    <!-- Scripts JavaScript necessários -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- Script personalizado -->
     <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
 </html>
