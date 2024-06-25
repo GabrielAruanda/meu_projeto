@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site - Preços</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>Meu Site - Pricing</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <div id="wrapper" class="d-flex">
         <!-- Menu Lateral -->
-        <div id="sidebar" class="bg-primary">
+        <div id="sidebar" class="bg-primary border-right">
             <div class="sidebar-heading text-white text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
                 <i class="fas fa-user-secret me-2"></i>Meu Site
             </div>
@@ -29,26 +29,26 @@
                     <i class="fas fa-envelope me-2"></i>Contact
                 </a>
                 {% if 'logged_in' in session %}
-                <a href="{{ url_for('logout') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                    <i class="fas fa-sign-out-alt me-2"></i>Logout ({{ session['username'] }})
-                </a>
+                    <a href="{{ url_for('logout') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                        <i class="fas fa-sign-out-alt me-2"></i>Logout ({{ session['username'] }})
+                    </a>
                 {% else %}
-                <a href="{{ url_for('register') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                    <i class="fas fa-user-plus me-2"></i>Cadastro
-                </a>
-                <a href="{{ url_for('login') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                    <i class="fas fa-sign-in-alt me-2"></i>Login
-                </a>
-                 {% endif %}
-                
+                    <a href="{{ url_for('register') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                        <i class="fas fa-user-plus me-2"></i>Cadastro
+                    </a>
+                    <a href="{{ url_for('login') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                        <i class="fas fa-sign-in-alt me-2"></i>Login
+                    </a>
+                {% endif %}
             </div>
         </div>
-     <!-- Conteúdo da Página -->
-     <div id="page-content-wrapper">
-        <div class="container-fluid mt-3">
-            <h1>Nossos Preços</h1>
-            <p>Veja abaixo nossos planos e preços.</p>
-            <!-- Adicione aqui a tabela de preços ou informações sobre preços -->
+
+        <!-- Conteúdo da Página -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid mt-3">
+                <h1>Página de Preços</h1>
+                <p>Aqui você pode colocar as informações de preços dos seus serviços ou produtos.</p>
+            </div>
         </div>
     </div>
 

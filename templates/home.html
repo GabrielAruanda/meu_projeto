@@ -1,61 +1,120 @@
+<!-- home.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Meu Site com Flask</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> <!-- Arquivo de estilos customizado -->
+    <style>
+        /* Estilos adicionais específicos para o encurtador de URL */
+        .url-shortener-container {
+            margin: 50px auto;
+            max-width: 600px;
+        }
+        .url-shortener-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .url-shortener-card .card-header {
+            background-color: #007bff;
+            color: white;
+            border-radius: 8px 8px 0 0;
+        }
+        .url-shortener-card .card-body {
+            padding: 20px;
+        }
+        .url-shortener-card .form-group {
+            margin-bottom: 20px;
+        }
+        .url-shortener-card .btn-primary {
+            width: 100%;
+        }
+        .url-shortener-list {
+            margin-top: 20px;
+        }
+        .url-shortener-list .list-group-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-    <div id="wrapper" class="d-flex">
-        <!-- Menu Lateral -->
-        <div id="sidebar" class="bg-primary">
-            <div class="sidebar-heading text-white text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
-                <i class="fas fa-user-secret me-2"></i>Meu Site
-            </div>
-            <div class="list-group list-group-flush my-3">
-                <a href="{{ url_for('home') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                    <i class="fas fa-home me-2"></i>Home
-                </a>
-                <a href="{{ url_for('features') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                    <i class="fas fa-cogs me-2"></i>Features
-                </a>
-                <a href="{{ url_for('pricing') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                    <i class="fas fa-tag me-2"></i>Pricing
-                </a>
-                <a href="{{ url_for('contact') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                    <i class="fas fa-envelope me-2"></i>Contact
-                </a>
-                {% if 'logged_in' in session %}
-                    <a href="{{ url_for('logout') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                        <i class="fas fa-sign-out-alt me-2"></i>Logout ({{ session['username'] }})
-                    </a>
-                {% else %}
-                    <a href="{{ url_for('register') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                        <i class="fas fa-user-plus me-2"></i>Cadastro
-                    </a>
-                    <a href="{{ url_for('login') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                        <i class="fas fa-sign-in-alt me-2"></i>Login
-                    </a>
-                {% endif %}
-            </div>
+    <!-- Menu Lateral -->
+    <div id="sidebar" class="bg-primary border-right">
+        <div class="sidebar-heading text-white text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
+            <i class="fas fa-user-secret me-2"></i>Meu Site
         </div>
+        <div class="list-group list-group-flush my-3">
+            <a href="{{ url_for('home') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                <i class="fas fa-home me-2"></i>Home
+            </a>
+            <a href="{{ url_for('features') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                <i class="fas fa-cogs me-2"></i>Features
+            </a>
+            <a href="{{ url_for('pricing') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                <i class="fas fa-tag me-2"></i>Pricing
+            </a>
+            <a href="{{ url_for('contact') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                <i class="fas fa-envelope me-2"></i>Contact
+            </a>
+            {% if 'logged_in' in session %}
+                <a href="{{ url_for('logout') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                    <i class="fas fa-sign-out-alt me-2"></i>Logout ({{ session['username'] }})
+                </a>
+            {% else %}
+                <a href="{{ url_for('register') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                    <i class="fas fa-user-plus me-2"></i>Cadastro
+                </a>
+                <a href="{{ url_for('login') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                    <i class="fas fa-sign-in-alt me-2"></i>Login
+                </a>
+            {% endif %}
+        </div>
+    </div>
 
-        <!-- Conteúdo da Página -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid mt-3">
-                <h1>Bem-vindo ao Meu Site com Flask</h1>
-                {% if 'logged_in' in session %}
-                    <p>Você está logado como {{ session['username'] }}.</p>
-                {% else %}
-                    <p>Você não está logado.</p>
-                {% endif %}
+    <!-- Conteúdo da Página -->
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card url-shortener-card">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="card-title">Encurtador de URL</h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" action="{{ url_for('home') }}">
+                            <div class="form-group">
+                                <label for="original_url">URL Original:</label>
+                                <input type="url" class="form-control" id="original_url" name="original_url" placeholder="Digite a URL original aqui" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Encurtar URL</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="url-shortener-list">
+                    <h2 class="mt-4 mb-3">URLs Encurtadas:</h2>
+                    <ul class="list-group">
+                        {% for url in urls %}
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p class="mb-1"><strong>URL Original:</strong> <a href="{{ url[1] }}">{{ url[1] }}</a></p>
+                                    <p class="mb-1"><strong>URL Encurtada:</strong> <a href="{{ url[2] }}">{{ request.url_root }}{{ url[2] }}</a></p>
+                                    <p class="mb-1"><strong>Número de Cliques:</strong> {{ url[3] }}</p>
+                                </div>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

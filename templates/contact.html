@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Site - Contato</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <div id="wrapper" class="d-flex">
         <!-- Menu Lateral -->
-        <div id="sidebar" class="bg-primary">
+        <div id="sidebar" class="bg-primary border-right">
             <div class="sidebar-heading text-white text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
                 <i class="fas fa-user-secret me-2"></i>Meu Site
             </div>
@@ -29,43 +29,43 @@
                     <i class="fas fa-envelope me-2"></i>Contact
                 </a>
                 {% if 'logged_in' in session %}
-                <a href="{{ url_for('logout') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                    <i class="fas fa-sign-out-alt me-2"></i>Logout ({{ session['username'] }})
-                </a>
-            {% else %}
-                <a href="{{ url_for('register') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                    <i class="fas fa-user-plus me-2"></i>Cadastro
-                </a>
-                <a href="{{ url_for('login') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                    <i class="fas fa-sign-in-alt me-2"></i>Login
-                </a>
-            {% endif %}
+                    <a href="{{ url_for('logout') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                        <i class="fas fa-sign-out-alt me-2"></i>Logout ({{ session['username'] }})
+                    </a>
+                {% else %}
+                    <a href="{{ url_for('register') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                        <i class="fas fa-user-plus me-2"></i>Cadastro
+                    </a>
+                    <a href="{{ url_for('login') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                        <i class="fas fa-sign-in-alt me-2"></i>Login
+                    </a>
+                {% endif %}
             </div>
         </div>
-    <!-- Conteúdo da Página -->
-    <div id="page-content-wrapper">
-        <div class="container-fluid mt-3">
-            <h1>Entre em Contato Conosco</h1>
-            <p>Use o formulário abaixo para nos enviar uma mensagem.</p>
-            <form>
-                <div class="form-group">
-                    <label for="name">Nome:</label>
-                    <input type="text" class="form-control" id="name">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email">
-                </div>
-                <div class="form-group">
-                    <label for="message">Mensagem:</label>
-                    <textarea class="form-control" id="message" rows="5"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
-                
-            </form>
+
+        <!-- Conteúdo da Página -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid mt-3">
+                <h1>Entre em Contato Conosco</h1>
+                <p>Use o formulário abaixo para nos enviar uma mensagem.</p>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Nome:</label>
+                        <input type="text" class="form-control" id="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem:</label>
+                        <textarea class="form-control" id="message" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
