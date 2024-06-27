@@ -156,6 +156,14 @@ def logout():
     flash('Você saiu da sua conta.', 'info')
     return redirect(url_for('index'))
 
+@app.route('/privacy')
+def privacy():
+    return render_template('privacy.html')
+
+@app.route('/terms')
+def terms():
+    return render_template('terms.html')
+
 # Ponto de entrada para execução do aplicativo Flask
 if __name__ == '__main__':
     app.run(debug=True)
