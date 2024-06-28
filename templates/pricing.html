@@ -12,6 +12,34 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+        #wrapper {
+            display: flex;
+        }
+        #sidebar {
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #007bff;
+            padding-top: 20px;
+        }
+        #page-content-wrapper {
+            margin-left: 250px;
+            padding: 20px;
+            width: calc(100% - 250px);
+            margin-top:100px;
+            text-align:center;
+        }
+        .card-header {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
     <div id="wrapper" class="d-flex">
         <!-- Menu Lateral -->
         <div id="sidebar" class="bg-primary border-right">
@@ -68,7 +96,7 @@
                                     <li>Suporte por e-mail</li>
                                     <li>Sem suporte 24/7</li>
                                 </ul>
-                                <a href="#" class="btn btn-lg btn-block btn-primary">Contratar</a>
+                                <a href="{{ url_for('contratar_basico') }}" class="btn btn-lg btn-block btn-primary">Contratar</a>
                                 <a href="#" class="btn btn-sm btn-block btn-outline-primary mt-3" data-toggle="collapse" data-target="#collapseBasico">Saiba mais</a>
                                 <div id="collapseBasico" class="collapse mt-3">
                                     <p>O Plano Básico é ideal para pequenos negócios que estão começando. Com 5 GB de armazenamento, você pode gerenciar seus documentos e e-mails de forma eficiente.</p>
@@ -89,7 +117,7 @@
                                     <li>Suporte prioritário por e-mail e telefone</li>
                                     <li>Suporte 24/7</li>
                                 </ul>
-                                <a href="#" class="btn btn-lg btn-block btn-primary">Contratar</a>
+                                <a href="{{ url_for('contratar_avancado') }}" class="btn btn-lg btn-block btn-primary">Contratar</a>
                                 <a href="#" class="btn btn-sm btn-block btn-outline-primary mt-3" data-toggle="collapse" data-target="#collapseAvancado">Saiba mais</a>
                                 <div id="collapseAvancado" class="collapse mt-3">
                                     <p>O Plano Avançado é perfeito para empresas que precisam de suporte rápido e eficiente. Com 10 GB de armazenamento, você pode gerenciar um volume maior de dados.</p>
@@ -111,7 +139,7 @@
                                     <li>Suporte VIP 24/7</li>
                                     <li>Consultoria personalizada</li>
                                 </ul>
-                                <a href="#" class="btn btn-lg btn-block btn-primary">Contratar</a>
+                                <a href="{{ url_for('contratar_premium') }}" class="btn btn-lg btn-block btn-primary">Contratar</a>
                                 <a href="#" class="btn btn-sm btn-block btn-outline-primary mt-3" data-toggle="collapse" data-target="#collapsePremium">Saiba mais</a>
                                 <div id="collapsePremium" class="collapse mt-3">
                                     <p>O Plano Premium é recomendado para empresas que necessitam de soluções personalizadas e suporte prioritário. Com armazenamento ilimitado, você nunca terá que se preocupar com espaço para seus dados.</p>

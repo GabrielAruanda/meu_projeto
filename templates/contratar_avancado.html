@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contratar Plano Avançado</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            padding-top: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        h1 {
+            color: #007bff;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .btn-contratar {
+            background-color: #007bff;
+            color: #fff;
+            margin-top: 20px;
+        }
+        .btn-voltar {
+            background-color: #6c757d;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contratar Plano Avançado</h1>
+        <p><strong>Detalhes do Plano Avançado:</strong></p>
+        <ul>
+            <li><strong>Preço:</strong> $100 / mês</li>
+            <li><strong>Armazenamento:</strong> 10 GB</li>
+            <li><strong>Suporte:</strong> Suporte prioritário por e-mail e telefone, suporte 24/7</li>
+        </ul>
+        <p><strong>Descrição:</strong></p>
+        <p>O Plano Avançado é perfeito para empresas que precisam de suporte rápido e eficiente. Com 10 GB de armazenamento, você pode gerenciar um volume maior de dados. O suporte prioritário por e-mail e telefone garante que suas questões sejam resolvidas rapidamente, permitindo que você mantenha sua operação sem interrupções. Além disso, o suporte 24/7 garante assistência a qualquer hora do dia ou da noite.</p>
+        <a href="/pricing" class="btn btn-voltar"><i class="fas fa-arrow-left"></i> Voltar para Pricing</a>
+        <a href="{{ url_for('contratar_form') }}" class="btn btn-contratar"><i class="fas fa-shopping-cart"></i> Contratar Plano Avançado</a>
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

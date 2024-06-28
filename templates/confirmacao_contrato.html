@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação de Contrato</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        color: #343a40;
+        padding-top: 20px;
+    }
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 30px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        border-radius: 5px;
+        text-align: center;
+    }
+    h1 {
+        color: #007bff;
+    }
+    .btn-voltar {
+        background-color: #007bff;
+        color: #fff;
+        margin-top: 20px;
+    }
+    <div class="container">
+        <h1>Confirmação de Contrato</h1>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Detalhes do Contrato</h5>
+                <p class="card-text"><strong>Plano:</strong> {{ plano }}</p>
+                <p class="card-text"><strong>Nome Completo:</strong> {{ nome }}</p>
+                <p class="card-text"><strong>Endereço:</strong> {{ endereco }}</p>
+                <p class="card-text"><strong>Método de Pagamento:</strong> {{ metodo_pagamento }}</p>
+                {% if numero_cartao %}
+                <p class="card-text"><strong>Número do Cartão:</strong> {{ numero_cartao }}</p>
+                {% endif %}
+                {% if cpf %}
+                <p class="card-text"><strong>CPF:</strong> {{ cpf }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

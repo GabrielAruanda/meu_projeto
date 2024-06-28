@@ -25,21 +25,24 @@
             display: flex;
             flex-wrap: wrap;
         }
+        /* Estilos para a barra lateral */
         #sidebar {
+            height: 100%;
             width: 250px;
             background-color: #007bff;
-            color: #fff;
-            padding-top: 56px; /* Altura do cabeçalho */
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s;
+            overflow: hidden;
             position: fixed;
-            height: 100%;
-            overflow-y: auto;
         }
+        
+        /* Estilos para o cabeçalho da barra lateral */
         .sidebar-heading {
             padding: 15px;
             font-size: 1.5rem;
             text-align: center;
-            border-bottom: 1px solid #ccc;
-            margin-bottom: 20px; /* Espaçamento inferior */
+            color: white;
         }
         .list-group-item {
             color: white;

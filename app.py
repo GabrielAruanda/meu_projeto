@@ -164,6 +164,47 @@ def privacy():
 def terms():
     return render_template('terms.html')
 
+# Rota para a página de contratação do Plano Básico
+@app.route('/contratar_basico', methods=['GET', 'POST'])
+def contratar_basico():
+    if request.method == 'POST':
+        # Aqui você pode processar os dados do formulário de contratação
+        flash('Contratação do Plano Básico realizada com sucesso!', 'success')
+        return redirect(url_for('pagina_sucesso'))
+    return render_template('contratar_basico.html')
+
+# Rota para a página de contratação do Plano Avançado
+@app.route('/contratar_avancado', methods=['GET', 'POST'])
+def contratar_avancado():
+    if request.method == 'POST':
+        # Aqui você pode processar os dados do formulário de contratação
+        flash('Contratação do Plano Avançado realizada com sucesso!', 'success')
+        return redirect(url_for('pagina_sucesso'))
+    return render_template('contratar_avancado.html')
+
+# Rota para a página de contratação do Plano Premium
+@app.route('/contratar_premium', methods=['GET', 'POST'])
+def contratar_premium():
+    if request.method == 'POST':
+        # Aqui você pode processar os dados do formulário de contratação
+        flash('Contratação do Plano Premium realizada com sucesso!', 'success')
+        return redirect(url_for('pagina_sucesso'))
+    return render_template('contratar_premium.html')
+
+@app.route('/contratar_form', methods=['GET'])
+def contratar_form():
+    plano = {'nome': 'Plano Básico'}  # Substitua com os dados do plano que você deseja mostrar na página
+    return render_template('contratar_form.html', plano=plano)
+
+@app.route('/confirmar_contratacao', methods=['GET'])
+def confirmar_contratacao():
+    # Aqui você pode adicionar lógica de processamento, se necessário
+    return render_template('confirmacao_contrato.html')
+
+
+
+
+
 # Ponto de entrada para execução do aplicativo Flask
 if __name__ == '__main__':
     app.run(debug=True)
