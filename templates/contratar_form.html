@@ -43,7 +43,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Contratar Plano: {{ plano.nome }}</h1>
+        <h1>Contratar Plano: {{ plano }}</h1>
         <form action="{{ url_for('confirmar_contratacao') }}" method="POST">
             <input type="hidden" name="plano" value="{{ plano }}">
             <div class="form-group">
