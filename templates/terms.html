@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,54 +11,63 @@
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f8f9fa;
-            color: #343a40; /* Cor do texto principal */
+            color: #343a40; /* Define a cor do texto principal */
         }
 
         .container {
             max-width: 800px;
-            margin: 50px auto;
+            margin: 50px auto; /* Centraliza o container na página */
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* Sombra suave */
         }
 
         h1 {
-            color: #007bff; /* Cor do título principal */
-            margin-bottom: 20px;
-            text-align: center;
+            color: #007bff; /* Define a cor do título principal */
+            margin-bottom: 20px; /* Espaçamento inferior do título */
+            text-align: center; /* Centraliza o título */
         }
 
         h4 {
-            color: #007bff; /* Cor dos títulos secundários */
-            margin-top: 20px;
+            color: #007bff; /* Define a cor dos títulos secundários */
+            margin-top: 20px; /* Espaçamento superior dos títulos */
         }
 
         p {
             font-size: 1.1rem;
             line-height: 1.6;
-            margin-bottom: 20px;
+            margin-bottom: 20px; /* Espaçamento inferior dos parágrafos */
         }
 
         ol {
-            padding-left: 20px;
-            margin-bottom: 20px;
+            padding-left: 20px; /* Recuo à esquerda para lista ordenada */
+            margin-bottom: 20px; /* Espaçamento inferior da lista */
         }
 
         li {
-            margin-bottom: 10px;
+            margin-bottom: 10px; /* Espaçamento inferior dos itens da lista */
         }
 
         a {
-            color: #007bff;
-            text-decoration: none;
+            color: #007bff; /* Define a cor dos links */
+            text-decoration: none; /* Remove sublinhado padrão dos links */
         }
 
         a:hover {
-            text-decoration: underline;
+            text-decoration: underline; /* Adiciona sublinhado ao passar o mouse sobre links */
+        }
+
+        /* Estilos responsivos */
+        @media (max-width: 768px) {
+            .container {
+                margin-top: 20px; /* Reduz o espaço superior do container */
+                padding: 15px; /* Reduz o padding do container */
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>Termos de Uso</h1>
@@ -96,5 +106,13 @@
 
         <br><a href="{{ url_for('home') }}" class="btn btn-primary mt-3">Voltar para a página inicial</a>
     </div>
+
+    <!-- Scripts JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- Script JavaScript personalizado -->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
+
 </html>

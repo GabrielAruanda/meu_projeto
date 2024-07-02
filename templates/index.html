@@ -34,28 +34,26 @@
             text-align: center;
             color: white;
         }
-        /* Estilos específicos para os itens da lista na barra lateral com cor de texto branco */
-        #sidebar .list-group-item 
-        {
-        color: white; /* Cor do texto branco para os itens da lista */
-        border: none; /* Remove a borda dos itens da lista */
+        
+        #sidebar .list-group-item {
+            color: white;
+            border: none;
         }
 
-        /* Estilos de hover para os itens da lista na barra lateral */
-        #sidebar .list-group-item:hover 
-        {
-        background-color: #0056b3; /* Cor de fundo mais escura quando o item da lista é hover */
+        #sidebar .list-group-item:hover {
+            background-color: #0056b3;
         }
 
         .list-group-item {
             border: none;
             color: #ddd;
-            padding: 20px; /* Preenchimento interno de 20px para cada item da lista */
-            transition: all 0.3s; /* Efeito de transição suave para todas as propriedades com duração de 0.3s */
-            white-space: nowrap; /* Impede a quebra de linha nos itens da lista */
-            display: flex; /* Usa display flex para layout flexível */
-            align-items: center; /* Alinha os itens verticalmente ao centro */
+            padding: 20px;
+            transition: all 0.3s;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
         }
+
         .list-group-item:hover, 
         .list-group-item.active {
             background-color: #0056b3;
@@ -114,6 +112,45 @@
         .btn-primary:hover {
             background-color: #0056b3;
         }
+
+        /* Estilos responsivos */
+        @media (max-width: 767.98px) {
+            #sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            #sidebar .list-group-item {
+                text-align: center;
+                padding: 10px;
+            }
+            #page-content-wrapper {
+                margin-left: 0;
+                width: 100%;
+            }
+            .jumbotron {
+                padding: 1rem;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            #sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            #sidebar .list-group-item {
+                text-align: center;
+                padding: 10px;
+            }
+            #page-content-wrapper {
+                margin-left: 0;
+                width: 100%;
+            }
+            .jumbotron {
+                padding: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -168,8 +205,8 @@
                 <section class="my-5">
                     <div class="container">
                         <div class="row text-center">
-                            <div class="col-md-4">
-                                <div class="card mb-4 shadow-sm">
+                            <div class="col-md-4 col-sm-6 mb-4">
+                                <div class="card shadow-sm">
                                     <div class="card-body">
                                         <i class="fas fa-link fa-3x mb-3"></i>
                                         <h5 class="card-title">Encurtamento de URL</h5>
@@ -177,8 +214,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="card mb-4 shadow-sm">
+                            <div class="col-md-4 col-sm-6 mb-4">
+                                <div class="card shadow-sm">
                                     <div class="card-body">
                                         <i class="fas fa-users fa-3x mb-3"></i>
                                         <h5 class="card-title">Gerenciamento de Usuários</h5>
@@ -186,8 +223,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="card mb-4 shadow-sm">
+                            <div class="col-md-4 col-sm-6 mb-4">
+                                <div class="card shadow-sm">
                                     <div class="card-body">
                                         <i class="fas fa-chart-line fa-3x mb-3"></i>
                                         <h5 class="card-title">Análise de Dados</h5>
@@ -204,19 +241,19 @@
                     <div class="container">
                         <h2 class="text-center mb-4">O que nossos usuários dizem</h2>
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-4 col-sm-6 mb-4">
                                 <div class="testimonial">
                                     <p>"Este site é fantástico! Ele realmente ajudou a simplificar minhas tarefas diárias."</p>
                                     <small>- João Silva</small>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 col-sm-6 mb-4">
                                 <div class="testimonial">
                                     <p>"Recomendo para todos os meus amigos. Interface intuitiva e funcionalidades poderosas."</p>
                                     <small>- Maria Oliveira</small>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 col-sm-6 mb-4">
                                 <div class="testimonial">
                                     <p>"A equipe de suporte é muito eficiente e sempre pronta para ajudar."</p>
                                     <small>- Pedro Santos</small>

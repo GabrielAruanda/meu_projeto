@@ -27,10 +27,17 @@
             background-color: #007bff;
             border-color: #007bff;
         }
+
+        @media (max-width: 767.98px) {
+            .container {
+                padding: 20px;
+                box-shadow: none;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container text-center">
         <h1>Sucesso!</h1>
         <p>Sua contratação foi realizada com sucesso. Agradecemos pela preferência!</p>
         <a href="{{ url_for('home') }}" class="btn btn-primary">Voltar para a Home</a>

@@ -21,7 +21,7 @@
             border-radius: 8px;
         }
         .url-shortener-card .card-header {
-            background-color: #007bff;
+            background-color:#f0f0f0 ;
             color: white;
             border-radius: 8px 8px 0 0;
         }
@@ -43,78 +43,14 @@
             margin-bottom: 10px;
         }
 
-        /* Estilos para o menu lateral */
-        #sidebar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 250px;
-            z-index: 100;
-            background-color: #007bff;
-            color: white;
-            padding-top: 56px;
-            overflow-y: auto;
-            transition: all 0.3s;
-        }
-        #sidebar .sidebar-heading {
-            padding: 15px 20px;
-            font-size: 1.5rem;
-            text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        #sidebar .list-group-item {
-            color: white;
-            border: none;
-        }
-        #sidebar .list-group-item:hover {
-            background-color: rgba(0, 0, 0, 0.2);
-        }
-        #sidebar.active {
-            width: 250px;
-            transition: all 0.3s;
-        }
-        #sidebar.active .sidebar-heading {
-            padding-left: 20px;
-            font-size: 1.2rem;
-        }
-        #sidebar.active .list-group-item {
-            padding: 10px 20px;
-            font-size: 0.9rem;
+        /* Estilos para o texto dentro da lista de URLs encurtadas */
+        .url-shortener-list .list-group-item a {
+            color: #007bff; /* Cor azul para os links */
+            text-decoration: none; /* Remove o sublinhado padrão dos links */
         }
 
-        #wrapper {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        #page-content-wrapper {
-            width: 100%;
-            padding: 20px;
-            transition: all 0.3s;
-        }
-        .container-fluid {
-            padding-right: 15px;
-            padding-left: 15px;
-            margin-right: auto;
-            margin-left: auto;
-        }
-        @media (min-width: 768px) {
-            #wrapper {
-                flex-direction: row;
-            }
-            #page-content-wrapper {
-                width: calc(100% - 250px);
-            }
-            #sidebar {
-                width: 250px;
-            }
-            #sidebar.active {
-                margin-left: -250px;
-            }
-            #sidebar.active + #page-content-wrapper {
-                width: 100%;
-                transition: all 0.3s;
-            }
+        .url-shortener-list .list-group-item a:hover {
+            text-decoration: underline; /* Adiciona sublinhado ao passar o mouse sobre os links */
         }
     </style>
 </head>
@@ -184,7 +120,7 @@
                                 <li class="list-group-item">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div>
-                                            <p class="mb-1"><strong>URL Original:</strong> <a href="{{ url[1] }}">{{ url[1] }}</a></p>
+                                            <p class="mb-1"><strong>URL Original:</strong> <a href="{{ url[1] }}" class="text-primary">{{ url[1] }}</a></p>
                                             <p class="mb-1"><strong>URL Encurtada:</strong> <a href="{{ url[2] }}">{{ request.url_root }}{{ url[2] }}</a></p>
                                             <p class="mb-1"><strong>Número de Cliques:</strong> {{ url[3] }}</p>
                                         </div>

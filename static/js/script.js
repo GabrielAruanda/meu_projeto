@@ -1,21 +1,37 @@
 // scripts.js
 
-// Espera até que o documento esteja completamente carregado
-$(document).ready(function() {
-    // Adiciona um evento de hover para o elemento com id 'sidebar'
-    $('#sidebar').hover(
-        // Função executada quando o mouse entra no 'sidebar'
-        function() {
-            $(this).removeClass('collapsed'); // Remove a classe 'collapsed'
+// Função para atualizar a página em tempo real
+function atualizarPagina() {
+    $.ajax({
+        url: window.location.href, // URL da página atual
+        type: 'GET',
+        dataType: 'html', // Tipo de dados esperado (HTML neste caso)
+        success: function(data) {
+            // Atualiza apenas o conteúdo dentro do corpo da página
+            $('body').html($(data).find('body').html());
         },
-        // Função executada quando o mouse sai do 'sidebar'
+        error: function(xhr, status, error) {
+            console.error('Erro ao atualizar página:', error);
+        }
+    });
+}
+
+$(document).ready(function() {
+    // Evento de hover para a barra lateral
+    $('#sidebar').hover(
         function() {
-            $(this).addClass('collapsed'); // Adiciona a classe 'collapsed'
+            $(this).removeClass('collapsed');
+        },
+        function() {
+            $(this).addClass('collapsed');
         }
     );
 
-    // Adiciona um evento de clique para elementos com a classe 'toggle-btn'
+    // Evento de clique para o botão de alternância da barra lateral
     $('.toggle-btn').click(function() {
-        $('#sidebar').toggleClass('collapsed'); // Alterna a classe 'collapsed' no 'sidebar'
+        $('#sidebar').toggleClass('collapsed');
     });
+
+    // Define um intervalo para chamar a função de atualização a cada 30 segundos (30000 milissegundos)
+    setInterval(atualizarPagina, 30000); // Altere o intervalo conforme necessário
 });

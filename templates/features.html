@@ -87,6 +87,23 @@
             color: #007bff;
             margin-bottom: 15px;
         }
+        @media (max-width: 576px) {
+            #sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            #page-content-wrapper {
+                margin-left: 0;
+                width: 100%;
+            }
+            .sidebar-heading {
+                text-align: center;
+            }
+            .list-group-item {
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -191,16 +208,13 @@
                 </div>
             </div>
         </div>
-            <!-- Fechamento das tags do conteúdo da página -->
-        </div>
     </div>
-</div>
 
-<!-- Scripts JavaScript necessários -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<!-- Script personalizado -->
-<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <!-- Scripts JavaScript necessários -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- Script personalizado -->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
 </html>
