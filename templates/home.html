@@ -21,7 +21,7 @@
             border-radius: 8px;
         }
         .url-shortener-card .card-header {
-            background-color:#f0f0f0 ;
+            background-color: #f0f0f0;
             color: white;
             border-radius: 8px 8px 0 0;
         }
@@ -36,21 +36,19 @@
         }
         .url-shortener-list {
             margin-top: 20px;
+            display: none; /* Inicialmente oculta a lista de URLs */
+        }
+        .url-shortener-list.show {
+            display: block; /* Exibe a lista de URLs quando a classe 'show' é adicionada */
         }
         .url-shortener-list .list-group-item {
             border: 1px solid #ddd;
             border-radius: 8px;
             margin-bottom: 10px;
         }
-
-        /* Estilos para o texto dentro da lista de URLs encurtadas */
-        .url-shortener-list .list-group-item a {
-            color: #007bff; /* Cor azul para os links */
-            text-decoration: none; /* Remove o sublinhado padrão dos links */
-        }
-
-        .url-shortener-list .list-group-item a:hover {
-            text-decoration: underline; /* Adiciona sublinhado ao passar o mouse sobre os links */
+        /* Estilos para o botão Mostrar Mais */
+        .show-more-button {
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -129,6 +127,8 @@
                                 {% endfor %}
                             </ul>
                         </div>
+                        <!-- Botão Mostrar Mais/Mostrar Menos -->
+                        <button class="btn btn-primary show-more-button mt-3" onclick="toggleUrls()">Mostrar Mais</button>
                     </div>
                 </div>
             </div>
@@ -137,6 +137,22 @@
 
     <!-- Scripts JavaScript necessários -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script>
+        function toggleUrls() {
+            var urlList = document.querySelector('.url-shortener-list');
+            var buttonText = document.querySelector('.show-more-button');
+            
+            if (urlList.classList.contains('show')) {
+                urlList.classList.remove('show');
+                buttonText.textContent = 'Mostrar Mais';
+            } else {
+                urlList.classList.add('show');
+                buttonText.textContent = 'Mostrar Menos';
+                // Rolando a página para o topo quando clicar em Mostrar Mais
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+            }
+        }
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <!-- Script personalizado -->

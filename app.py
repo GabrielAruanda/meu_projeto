@@ -83,6 +83,9 @@ def home():
         cur.execute("SELECT id, original_url, short_url, click_count FROM urls WHERE user_id = %s", (user_id,))
         urls = cur.fetchall()
         cur.close()
+
+        # Ordena as URLs pelo número de cliques em ordem decrescente
+        urls = sorted(urls, key=lambda x: x[3], reverse=True)
         
         # Renderiza a página home com as URLs do usuário
         return render_template('home.html', username=username, logged_in=True, urls=urls)
